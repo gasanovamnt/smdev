@@ -1,7 +1,5 @@
 import shop.Shop;
-import shop.clothes.Cloth;
 
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,6 +16,7 @@ public class Main {
 //        int selectedColorCloth = scanner.nextInt();
 //        System.out.println("Вы выбрали цвет " + cloth.color.get(selectedColorCloth));
         shop.test();
+        shop.printArray();
     }
 
 }

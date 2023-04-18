@@ -12,7 +12,7 @@ public class Shop {
 //    public Sneakers sneakers = new Sneakers("Скороходы", Arrays.asList("Синий", "Красный", "Желтый"), 700);
 //    public Jeans jeans = new Jeans("Нескороходы", Arrays.asList("Синий", "Красный", "Желтый"), 1500);
     public int k = 0;
-    ArrayList<Cloth> clothes = new ArrayList<Cloth>();
+    ArrayList<Cloth> clothes = new ArrayList<>();
     public Shop() {
         clothes.add(new Cap("Balenciaga", Arrays.asList("Бордовый", "Красноватый", "Бархатный"), 1999));
         clothes.add(new Jeans("Gucci", Arrays.asList("Бордовый", "Красноватый", "Бархатный"), 1999));
@@ -44,7 +44,6 @@ public class Shop {
         System.out.println(Cash.cash);
         System.out.println("Введите одежду, которую хотите купить");
         Scanner scanner = new Scanner(System.in);
-        Scanner scannerColor = new Scanner(System.in);
         int selectedCloth = scanner.nextInt();
         Cloth clothe = getCloth(selectedCloth);
         if (Cash.cash >= clothe.price) {
@@ -63,6 +62,8 @@ public class Shop {
                 Cash.cash = Cash.cash - clothe.price;
                 System.out.println("Остаток на балансе: " + Cash.cash);
             }
+            this.clothes.remove(selectedCloth);
+            printArray();
         }
         else {
             System.out.println("Денег недостаточно");
@@ -75,6 +76,11 @@ public class Shop {
         Scanner scanner_prov = new Scanner(System.in);
         if (scanner_prov.nextLine().equals("Да")){
             test();
+        }
+    }
+    public void printArray() {
+        for (int i = 0; i < clothes.size(); i++) {
+            System.out.println(i + " " + clothes.get(i).name);
         }
     }
 
