@@ -16,7 +16,6 @@ public class Main {
 //        int selectedColorCloth = scanner.nextInt();
 //        System.out.println("Вы выбрали цвет " + cloth.color.get(selectedColorCloth));
         shop.test();
-        shop.printArray();
     }
 
 }
